@@ -1,5 +1,6 @@
 <tr>
     <td><%= post.title.upcase %></td>
+    <td> Published <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</td>
     <td><%= post.body %></td>
     <td><%= link_to post.status, toggle_status_post_path(post) %></td>
     <td><%= link_to 'Show', post %></td>

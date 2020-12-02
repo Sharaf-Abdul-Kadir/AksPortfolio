@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/Sharaf-Abdul-Kadir/aks_view_tool
+  revision: d5608bf78c0a19e91ce5f2e8090914d2fdc76207
+  specs:
+    aks_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -205,6 +211,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aks_view_tool!
   bootsnap (>= 1.4.2)
   bootstrap (~> 5.0.0.alpha3)
   byebug

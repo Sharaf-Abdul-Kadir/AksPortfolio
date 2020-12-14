@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_status]
   layout "post"
 
@@ -28,8 +29,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
-
+    @post = Post.new(user: current_user)
+    @post.assign_attributes(post_params)
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Your post is now live.' }
@@ -76,6 +77,7 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.friendly.find(params[:id])
+      authorize @post
     end
 
     # Only allow a list of trusted parameters through.

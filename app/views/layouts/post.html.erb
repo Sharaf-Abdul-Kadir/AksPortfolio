@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= @page_title %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title><%= @page_title %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  
+  <meta name="keywords" content="<%= @seo_keywords %>"" />
+  <%= stylesheet_link_tag 'posts', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-    <meta name="keywords" content="<%= @seo_keywords %>"" />
-    <%= stylesheet_link_tag 'posts', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= login_helper %>
-
-    <%= yield %>
-
-    <%= render "shared/nav", location: 'bottom' %>  
-
-    <%= source_helper("post") %>
-
-  </body>
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  
+  <%= login_helper %>
+  
+  <%= yield %>
+  
+  <%= render "shared/nav", location: 'bottom' %>  
+  
+  <%= source_helper("post") %>
+  
+</body>
 </html>

@@ -54,3 +54,6 @@ gem 'bootstrap', '~> 5.0.0.alpha3'
 
 # Build by Abdulkadir Sharaf
 gem 'aks_view_tool'
+
+
+gem "pundit"

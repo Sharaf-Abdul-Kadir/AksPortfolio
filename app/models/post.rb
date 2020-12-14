@@ -6,6 +6,7 @@ class Post < ApplicationRecord
     validates_presence_of :title, :body, :topic_id
 
     belongs_to :topic
+    belongs_to :user
 
     def self.special_blogs
         all
